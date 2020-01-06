@@ -94,14 +94,21 @@ echo '<section id="upload" class="upload mb-4">
 </div>';
 echo '<div class="row justify-content-center">
 <div class="col-lg-8">
-<div class="input-group mb-3">
+<div class="input-group">
 <div class="custom-file">
 <form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
-<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload File" class="submit">
+<input type="file" name="file" size="60">
+<input name="_upl" type="submit" id="_upl" value="Upload File" class="btn btn-secondary">
 </form>
-</div>
+</div></div><br/>
 
-<div class="input-group mb-3"> <div class="input-group-prepend"> <span class="input-group-text" id="inputGroupFileAddon01">Upload</span> </div> <div class="custom-file"> <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"> <label class="custom-file-label" for="inputGroupFile01">Choose file</label> </div> </div>
+<div class="input-group">
+<div class="custom-file">
+<input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+<label class="custom-file-label" for="inputGroupFile04">Choose file</label></div>
+<div class="input-group-append">
+<button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+</div></div>
 
 </div>
 </div>
