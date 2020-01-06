@@ -62,11 +62,11 @@ if(copy($url,$file))
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
 else {echo '<div class="alert alert-danger text-center" role="alert"><i class="far fa-exclamation-circle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
-echo '<section id="import">
+echo '<section id="import" class="import mb-4">
 <div class="container">
 <div class="row mb-4 pt-2">
 <div class="col text-center">
-<div class="import"><h2>Import File Menu</h2></div>
+<h2>Import File Menu</h2>
 </div>
 </div>';
 echo '<div class="row justify-content-center">
