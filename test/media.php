@@ -34,7 +34,7 @@
   </head>
 <body>
 <?php
-if($_POST['act'] == 'Import File' &&$_POST['url'] != '')
+if($_POST['act'] == 'Mulai Import File' &&$_POST['url'] != '')
 {$url=$_POST['url']; $nama=$_POST['nama'];
 // Jika nama file tidak diisi, maka nama filenya akan sama dengan nama file yang kita import.
 if($nama == '')
@@ -52,7 +52,7 @@ echo '<section id="import" class="import mb-4">
 <div class="container">
 <div class="row mb-3 pt-4">
 <div class="col text-center">
-<h2>Import File</h2>
+<h2>Import File Menu</h2>
 </div>
 </div>';
 echo '<div class="row justify-content-center">
@@ -64,7 +64,7 @@ echo '<div class="row justify-content-center">
 <div class="form-group text-center">
 <label for="nama">Disimpan Sebagai :</label>
 <input type="text" class="form-control" name="nama"></div>
-<input type="submit" class="btn btn-secondary" name="act" value="Mulai Import File" class="submit"></form>
+<input type="submit" class="btn btn-secondary text-center" name="act" value="Mulai Import File" class="submit"></form>
 </div>
 </div>
 </div>
