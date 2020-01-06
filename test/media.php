@@ -21,13 +21,13 @@
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
   <style>
-.import h1 {
+.import h2 {
 	font-family: Lobster;
 }
-.upload h1 {
+.upload h2 {
 	font-family: Lobster;
 }
-.unzip h1 {
+.unzip h2 {
 	font-family: Lobster;
 }
   </style>
@@ -43,11 +43,11 @@ if($nama == '')
 else{$file=$nama;}
 // File berhasil di import.
 if(copy($url,$file))
-{echo '<div class="alert alert-success" role="alert">File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
+{echo '<div class="alert alert-success text-center" role="alert">File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
 {echo '"><b>'.$file;
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
-else {echo '<div class="alert alert-danger" role="alert">Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
+else {echo '<div class="alert alert-danger text-center" role="alert">Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import" class="import mb-4">
 <div class="container">
 <div class="row mb-3 pt-4">
@@ -56,15 +56,15 @@ echo '<section id="import" class="import mb-4">
 </div>
 </div>';
 echo '<div class="row justify-content-center">
-<div class="col-lg-10">
+<div class="col-lg-8">
 <form method="post">
-<div class="form-group-content-center">
+<div class="form-group text-center">
 <label for="url">Masukkan URL</label>
 <input type="text" class="form-control" name="url"></div>
-<div class="form-group-content-center">
+<div class="form-group text-center">
 <label for="nama">Disimpan Sebagai :</label>
 <input type="text" class="form-control" name="nama"></div>
-<input type="submit" class="btn btn-secondary-content-center" name="act" value="Import File" class="submit"></form>
+<input type="submit" class="btn btn-secondary" name="act" value="Mulai Import File" class="submit"></form>
 </div>
 </div>
 </div>
