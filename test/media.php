@@ -24,6 +24,9 @@
 .import h2 {
 	font-family: Lobster;
 }
+.import label  {
+	font-family: Josefin Sans;
+}
 .upload h2 {
 	font-family: Lobster;
 }
@@ -48,9 +51,9 @@ if(copy($url,$file))
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
 else {echo '<div class="alert alert-danger text-center" role="alert">Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
-echo '<section id="import" class="import mb-4">
-<div class="container">
-<div class="row mb-3 pt-4">
+echo '<section id="import">
+<div class="container import mb-4">
+<div class="row mb-4 pt-2">
 <div class="col text-center">
 <h2>Import File Menu</h2>
 </div>
@@ -59,12 +62,13 @@ echo '<div class="row justify-content-center">
 <div class="col-lg-8">
 <form method="post">
 <div class="form-group text-center">
-<label for="url">Masukkan URL</label>
+<label for="url">Masukkan URL File</label>
 <input type="text" class="form-control" name="url"></div>
 <div class="form-group text-center">
-<label for="nama">Disimpan Sebagai :</label>
+<label for="nama">Disimpan Sebagai (Optional):</label>
 <input type="text" class="form-control" name="nama"></div>
-<input type="submit" class="btn btn-secondary text-center" name="act" value="Mulai Import File" class="submit"></form>
+<input type="submit" class="btn btn-secondary content-center" name="act" value="Mulai Import File" class="submit">
+</form>
 </div>
 </div>
 </div>
