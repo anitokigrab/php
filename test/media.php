@@ -104,10 +104,10 @@ echo '<div class="row justify-content-center">
 
 <div class="input-group">
 <div class="custom-file">
-<input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-<label class="custom-file-label" for="inputGroupFile04">Choose file</label></div>
+<input type="file" class="custom-file-input" id="uploader" aria-describedby="uploader">
+<label class="custom-file-label" for="uploader">Choose file...</label></div>
 <div class="input-group-append">
-<button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+<button name="_upl" class="input-group-text" type="submit" id="_upl">Upload File</button>
 </div></div>
 
 </div>
