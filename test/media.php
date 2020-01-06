@@ -1,76 +1,26 @@
 <!DOCTYPE html>
   <head>
-  <title>...::: Kon-Tools :::...</title>
+  <!-- Required meta tags -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="shortcut icon" href="http://kabaneri.com/favicon.ico" type="img/x-icon"/>
-  <link rel="icon" href="http://kabaneri.com/favicon.ico" type="image/x-icon"/>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
-
-    body {
-      font-family: Ubuntu, serif;
-      max-width: 10000px;
-      border: 1px solid #000;
-      text-align: center;
-    }
-
-    fieldset {
-      border: 1px solid #009900;border-radius:8px;width:60%;
-    }
-
-    .select {
-      padding: 5px;
-      font-size: 110%;
-    }
-
-    .status {
-      margin-top: 20px;
-      padding: 5px;
-      font-size: 80%;
-      width:60%;
-      background: #EEE;
-      border: 1px dotted #009900;
-    }
-
-    form [type=text]{background:#fff;color:#009900;border:2px solid #eee;border-radius:8px;width:60%;padding:7px;margin:2px 2px 0px 2px;
-    }
-
-    .submit {
-      -moz-box-shadow: inset 0px 1px 0px 0px #009900;
-      -webkit-box-shadow: inset 0px 1px 0px 0px #009900;
-      box-shadow: inset 0px 1px 0px 0px #009900;
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #009900), color-stop(1, #009900));
-      background: -moz-linear-gradient(center top, #009900 5%, #009900 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009900', endColorstr='#009900');
-      background-color: #009900;
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      border: 1px solid #000;
-      display: inline-block;
-      color: #ffffff;
-      font-family: arial;
-      font-size: 15px;
-      font-weight: bold;
-      padding: 10px 24px;
-      text-decoration: none;
-      text-shadow: 1px 1px 0px #000;
-    }
-
-    .submit:hover {
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000), color-stop(1, #000));
-      background: -moz-linear-gradient(center top, #000 5%, #000 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#000');
-      background-color: #000;
-    }
-
-    .submit:active {
-      position: relative;
-      top: 1px;
-    }
-  </style>
-</head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6c757d" />
+  <meta name="msapplication-navbutton-color" content="#6c757d" />
+  <meta name="msapplication-TileColor" content="#6c757d"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#6c757d" />
+  <title>Import Upload Unzip Project</title>
+  <!-- Fonts -->
+  <link href=\'https://fonts.googleapis.com/css?family=Ubuntu\' rel=\'stylesheet\'>
+  <link href=\'https://fonts.googleapis.com/css?family=Lobster\' rel=\'stylesheet\'>
+  <link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans\' rel=\'stylesheet\'>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
+  <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
+  </head>
 <body>
 <?php
 if($_POST['act'] == 'Import File' &&$_POST['url'] != '')
