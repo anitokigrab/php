@@ -16,11 +16,15 @@
   <link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans\' rel=\'stylesheet\'>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
 <style>
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lobster:400,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+
 html {
 	position: relative;
 }
