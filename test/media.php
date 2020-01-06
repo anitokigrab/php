@@ -96,10 +96,13 @@ echo '<div class="row justify-content-center">
 <div class="col-lg-8">
 <div class="input-group mb-3">
 <div class="custom-file">
-<form method="post" class="custom-file-input" enctype="multipart/form-data" name="uploader" id="uploader">
-<input type="file" name="file" size="60"><input name="_upl" class="input-group-text" type="submit" id="_upl" value="Upload File" class="submit">
+<form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
+<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload File" class="submit">
 </form>
 </div>
+
+<div class="input-group mb-3"> <div class="input-group-prepend"> <span class="input-group-text" id="inputGroupFileAddon01">Upload</span> </div> <div class="custom-file"> <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"> <label class="custom-file-label" for="inputGroupFile01">Choose file</label> </div> </div>
+
 </div>
 </div>
 </div>
