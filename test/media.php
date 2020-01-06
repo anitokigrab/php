@@ -103,13 +103,7 @@ echo '<div class="row justify-content-center">
 </div>
 </div><br/>
 
-<div class="input-group">
-<div class="custom-file">
-<form method="post" enctype="multipart/form-data" type="file" class="custom-file-input" id="uploader" aria-describedby="uploader"><label class="custom-file-label" for="uploader">Choose file</label></div>
-<div class="input-group-append"> 
-<input name="_upl" class="btn btn-secondary" type="submit" id="_upl" value="Upload"> </div></form> </div><br/>
-
-<div class="input-group"> <div class="custom-file"> <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="_upl"> <label class="custom-file-label" for="inputGroupFile04">Choose file</label> </div> <div class="input-group-append"> <button class="btn btn-outline-secondary" type="button" id="_upl">Upload</button> </div> </div>
+<div class="input-group"> <div class="custom-file"> <form method="post" enctype="multipart/form-data" name="uploader" id="uploader"><input type="file" class="custom-file-input" name="inputGroupFile04" id="inputGroupFile04" aria-describedby="_upl"> <label class="custom-file-label" for="inputGroupFile04">Choose file</label> </div> <div class="input-group-append"> <button name="_upl" class="btn btn-outline-secondary" type="button" id="_upl">Upload</button> </div></form> </div>
 
 </div>
 </div>
