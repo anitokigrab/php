@@ -20,12 +20,17 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
-  <style>
+<style>
+html {
+	position: relative;
+}
+
+body {
+	font-family: Josefin Sans;
+}
+
 .import h2 {
 	font-family: Lobster;
-}
-.import label  {
-	font-family: Josefin Sans;
 }
 .upload h2 {
 	font-family: Lobster;
@@ -33,7 +38,7 @@
 .unzip h2 {
 	font-family: Lobster;
 }
-  </style>
+</style>
   </head>
 <body>
 <?php
@@ -52,10 +57,10 @@ if(copy($url,$file))
 // File gagal di import.
 else {echo '<div class="alert alert-danger text-center" role="alert">Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import">
-<div class="container import mb-4">
+<div class="container">
 <div class="row mb-4 pt-2">
 <div class="col text-center">
-<h2>Import File Menu</h2>
+<div class="import"><h2>Import File Menu</h2></div>
 </div>
 </div>';
 echo '<div class="row justify-content-center">
@@ -67,7 +72,7 @@ echo '<div class="row justify-content-center">
 <div class="form-group text-center">
 <label for="nama">Disimpan Sebagai (Optional):</label>
 <input type="text" class="form-control" name="nama"></div>
-<input type="submit" class="btn btn-secondary content-center" name="act" value="Mulai Import File" class="submit">
+<center><input type="submit" class="btn btn-secondary" name="act" value="Mulai Import File" class="submit"></center>
 </form>
 </div>
 </div>
