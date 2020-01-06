@@ -67,8 +67,7 @@ echo '<a href="'.$dir.'/search/'.$pq.'/'.$nextT.'/'.($p+1).'.html" title="Downlo
 echo '</div>
 <center><a href="http://click.buzzcity.net/click.php?partnerid=127456&bn=3" rel="nofollow" title="Download Gratis Video Youtube"><img src="http://ads.buzzcity.net/show.php?partnerid=127456&get=image&bn=3" alt="Download Gratis Video Youtube New" title="Download Gratis Video Youtube"/></a></center>';
 }else{
-echo '<div class="group"><p align="center"><b>Video was not found...!!!<br/>Please REFRESH this page if content not display or using another keyword.<br/>contact me: <a href="mailto:mp3zer.net@gmail.com">mp3zer.net@gmail.com if site error!</a></b></p></div>';
+echo '<div class="group"><p align="center"><b>Masih Error!!</b></p></div>';
 }
-include 'lastsearch.php';
 include 'foot.php';
 ?>
