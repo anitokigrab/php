@@ -94,18 +94,8 @@ echo '<section id="upload" class="upload mb-4">
 </div>';
 echo '<div class="row justify-content-center">
 <div class="col-lg-8">
-<div class="input-group">
-<div class="custom-file">
-<form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
-<input type="file" class="custom-file-input" name="file">
-<input name="_upl" type="submit" id="_upl" value="Upload" class="input-group-text">
-</form>
-</div>
-</div><br/>
-
 <form method="post" enctype="multipart/form-data" name="uploader" id="uploader">';
-echo '<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload" class="submit"></form>
-
+echo '<input class="custom-file-input" type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload" class="btn btn-secondary"></form>
 </div>
 </div>
 </div>
