@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^video/([A-Za-z0-9\_\-\.\&]+)/([A-Za-z0-9_\-\']+)_show.html$ watch.php?id=$1&n=$2&show=show
+RewriteRule ^video/([A-Za-z0-9\_\-\.\&]+)/([A-Za-z0-9_\-\']+).html$ watch.php?id=$1&n=$2
+RewriteRule ^latest/download/page([0-9]+).html$ latest.php?p=$1&ld
+RewriteRule ^latest/download\.html$ latest.php?ld [L]
+RewriteRule ^latest/search\.html$ latest.php?ls [L]
+RewriteRule ^sitemap\.xml$ stmp.php [L]
+
+RewriteRule ^([A-Za-z0-9\_\-]+)/([0-9]+).html$ index.php?token=$1&p=$2
+RewriteRule ^search/(.+)/(.+)/([0-9]+).html$ index.php?s=$1&token=$2&p=$3
+RewriteRule ^search/(.+).html$ index.php?s=$1
+
+Options +Indexes
+ServerSignature On
+
+ErrorDocument 402 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
