@@ -44,7 +44,8 @@ echo '<section id="import" class="import mb-4">
 <h2>Import File</h2>
 </div>
 </div>';
-echo '<div class="row justify-content-center"> <div class="col-lg-10">
+echo '<div class="row justify-content-center">
+<div class="col-lg-10">
 <form method="post">
 <div class="form-group">
 <label for="url">Masukkan URL</label>
@@ -53,6 +54,8 @@ echo '<div class="row justify-content-center"> <div class="col-lg-10">
 <label for="nama">Disimpan Sebagai :</label>
 <input type="text" class="form-control" name="nama"></div>
 <input type="submit" class="btn btn-secondary" name="act" value="Import File" class="submit"></form>
+</div>
+</div>
 </div>
 </div>
 </section>';
