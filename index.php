@@ -9,7 +9,7 @@ $querys = $q;
 $title = ''.$dir2.' – '.$dir3.'';
 }
 
-$anitoki = ngegrab('https://anitoki.com/');
+$anitoki = grab('https://anitoki.com/');
 $postnya = cut('<div class="rseries right">','<div class="rekomf">', $anitoki);
 // $posting = explode('<div class="rseries right">', $jupok[1]);
 // $posting = explode('<div class="rekomf">', $posting[1]);
