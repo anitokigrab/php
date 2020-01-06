@@ -25,24 +25,37 @@
 <?php
 if($_POST['act'] == 'Import File' &&$_POST['url'] != '')
 {$url=$_POST['url']; $nama=$_POST['nama'];
-//Jika nama file tidak diisi, maka nama filenya akan sama dengan nama file yang kita import.
+// Jika nama file tidak diisi, maka nama filenya akan sama dengan nama file yang kita import.
 if($nama == '')
 {$file=basename($url);}
-//Kalo kita masukkan nama filenya, maka nama filenya akan berubah sesuai dengan nama yg kita masukkan.
+// Kalo kita masukkan nama filenya, maka nama filenya akan berubah sesuai dengan nama yg kita masukkan.
 else{$file=$nama;}
-//File berhasil di import.
+// File berhasil di import.
 if(copy($url,$file))
 {echo '<center><font color="#009900">File berhasil diimport dan disimpan sebagai</font> “<u><a title="Visit Link" href="./'.$file;
 {echo '"><b>'.$file;
 {echo '</b></a></u>”</center>';}}}
 //File gagal di import.
 else {echo '<center><font color="#ff0000">Gagal mengimport file</font> <b>'.basename($url).'';} echo '</b></center><hr />';}
-echo '<h1 align="center"><<- Import File ->></h1>';
-echo '<center><form method="post">Masukan URL File<br/>
-<input type="text" name="url"><br/>
-Disimpan sebagai :<br/>
-<input type="text" name="nama"><br/><br/>
-<input type="submit" name="act" value="Import File" class="submit"></form></center>';
+echo '<section id="import" class="import mb-4">
+<div class="container">
+<div class="row mb-3 pt-4">
+<div class="col text-center">
+<h2>Import File</h2>
+</div>
+</div>';
+echo '<div class="row justify-content-center"> <div class="col-lg-10">
+<form method="post">
+<div class="form-group">
+<label for="url">Masukkan URL</label>
+<input type="text" class="form-control" name="url"></div>
+<div class="form-group">
+<label for="nama">Disimpan Sebagai :</label>
+<input type="text" class="form-control" name="nama"></div>
+<input type="submit" class="btn btn-secondary" name="act" value="Import File" class="submit"></form>
+</div>
+</div>
+</section>';
 ?>
 <hr/>
 <?php
