@@ -24,7 +24,7 @@ include 'head.php';
 echo '<div class="bootstrap_menu" align="right"><a href="http://click.buzzcity.net/click.php?partnerid=127456&bn=1" rel="nofollow" title="Download Gratis Video Youtube"><img src="http://ads.buzzcity.net/show.php?partnerid=127456&get=image&bn=1" alt="Download Gratis Video Youtube New" title="Download Gratis Video Youtube"/></a></div>
 <div class="ijo"><h3>'.$result.'</h3></div>';
 
-$grab = ngegrab('https://anitoki.com/?s='.crut($querys).'');
+$grab = ngegrab('https://anitoki.com/?s='.crut2($querys).'');
 $json = json_decode($grab);
 $totals = $json->pageInfo->totalResults;
 $nextT=$json->nextPageToken;
