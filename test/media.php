@@ -47,13 +47,13 @@ echo '<section id="import" class="import mb-4">
 echo '<div class="row justify-content-center">
 <div class="col-lg-10">
 <form method="post">
-<div class="form-group">
+<div class="form-group-content-center">
 <label for="url">Masukkan URL</label>
 <input type="text" class="form-control" name="url"></div>
-<div class="form-group">
+<div class="form-group-content-center">
 <label for="nama">Disimpan Sebagai :</label>
 <input type="text" class="form-control" name="nama"></div>
-<input type="submit" class="btn btn-secondary" name="act" value="Import File" class="submit"></form>
+<input type="submit" class="btn btn-secondary-content-center" name="act" value="Import File" class="submit"></form>
 </div>
 </div>
 </div>
