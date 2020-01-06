@@ -20,6 +20,17 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
+  <style>
+.import h1 {
+	font-family: Lobster;
+}
+.upload h1 {
+	font-family: Lobster;
+}
+.unzip h1 {
+	font-family: Lobster;
+}
+  </style>
   </head>
 <body>
 <?php
