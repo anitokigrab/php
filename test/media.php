@@ -101,7 +101,14 @@ echo '<div class="row justify-content-center">
 <input name="_upl" type="submit" id="_upl" value="Upload File" class="input-group-text">
 </form>
 </div>
-</div>
+</div><br/>
+
+<div class="input-group">
+<div class="custom-file">
+<form method="post" enctype="multipart/form-data" type="file" class="custom-file-input" id="uploader" aria-describedby="uploader"><label class="custom-file-label" for="file">Choose file</label></div>
+<div class="input-group-append"> 
+<input name="_upl" class="btn btn-secondary" type="submit" id="_upl" value="Upload File"> </div> </div></form>
+
 </div>
 </div>
 </div>
