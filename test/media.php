@@ -43,11 +43,11 @@ if($nama == '')
 else{$file=$nama;}
 // File berhasil di import.
 if(copy($url,$file))
-{echo '<center><font color="#009900">File berhasil diimport dan disimpan sebagai</font> “<u><a title="Visit Link" href="./'.$file;
+{echo '<div class="alert alert-success" role="alert">File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
 {echo '"><b>'.$file;
-{echo '</b></a></u>”</center>';}}}
-//File gagal di import.
-else {echo '<center><font color="#ff0000">Gagal mengimport file</font> <b>'.basename($url).'';} echo '</b></center><hr />';}
+{echo '</b></a></u>”</div>';}}}
+// File gagal di import.
+else {echo '<div class="alert alert-danger" role="alert">Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import" class="import mb-4">
 <div class="container">
 <div class="row mb-3 pt-4">
