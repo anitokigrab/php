@@ -13,6 +13,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" />
   <!-- Favicon -->
   <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="img/x-icon"/>
   <link rel="icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon"/>
@@ -58,7 +61,7 @@ if(copy($url,$file))
 {echo '"><b><i class="fas fa-external-link"></i> '.$file;
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
-else {echo '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-triangle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
+else {echo '<div class="alert alert-danger text-center" role="alert"><i class="far fa-exclamation-circle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import">
 <div class="container">
 <div class="row mb-4 pt-2">
