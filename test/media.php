@@ -10,10 +10,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="#6c757d" />
   <title>Import Upload Unzip Project</title>
-  <!-- Fonts -->
-  <link href=\'https://fonts.googleapis.com/css?family=Ubuntu\' rel=\'stylesheet\'>
-  <link href=\'https://fonts.googleapis.com/css?family=Lobster\' rel=\'stylesheet\'>
-  <link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans\' rel=\'stylesheet\'>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
@@ -30,9 +26,12 @@ html {
 }
 
 body {
-	font-family: Josefin Sans;
+	font-family: Ubuntu;
 }
 
+.import label {
+	font-family: Josefin Sans;
+}
 .import h2 {
 	font-family: Lobster;
 }
@@ -59,7 +58,7 @@ if(copy($url,$file))
 {echo '"><b><i class="fas fa-external-link"></i> '.$file;
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
-else {echo '<div class="alert alert-danger text-center" role="alert"><i class="far fa-exclamation-circle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
+else {echo '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-triangle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import">
 <div class="container">
 <div class="row mb-4 pt-2">
