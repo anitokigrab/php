@@ -1,7 +1,7 @@
 <?php
-$dir = 'http://onovideo.com';
-$dir2 = 'OnoVideo.Com';
-$dir3 = 'Gratis Download All Videos YouTube';
+$dir = 'https://ani.shinoa.best';
+$dir2 = 'Anime Shinoa';
+$dir3 = 'Gratis Download Anime Terbaru';
 $goover = 'RzetYH75bxcvw64PD2XSDEut7BDw2Ae2_-zwqFhGznA';
 $bing = '9B3E4F2B4CF1036D32C4E16EB8EE86E1';
 $alexa = 'aDPt0cfic67RHz0kReW5waPf3Ns';
@@ -70,19 +70,19 @@ $yt= strstr(stazzx('https://m.youtube.com/watch?v='.$id),'</form>');
 $title = cut($yt,'bold">','</');
 return $title;
 }
-function ipank($txt) {
+function crut($txt) {
 $txt = preg_replace('/[^a-zA-Z0-9\.\(\)\-\'\"]/', ' ', trim(strtolower($txt)));
 $txt = ucwords(str_replace('  ',' ',$txt));
 return $txt;
 }
-function ipank1($txt) {
+function crut1($txt) {
 $txt = preg_replace("/[^a-zA-Z0-9_\-\']/", "_", trim(strtolower($txt)));
 $txt = str_replace("__","_",$txt);
 return $txt;
 }
 $vst = explode(',','nk,w,.c,pa,om,:/,ht,/');
 
-function ipank2($txt) {
+function crut2($txt) {
 $txt = str_replace("_","+",str_replace(" ","+",trim($txt)));
 return $txt;
 }
