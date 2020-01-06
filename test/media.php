@@ -97,8 +97,10 @@ echo '<div class="row justify-content-center">
 <div class="input-group">
 <div class="custom-file">
 <form method="post" enctype="multipart/form-data" name="uploader" id="uploader">
-<input type="file" name="file" size="60">
-<input name="_upl" type="submit" id="_upl" value="Upload File" class="btn btn-secondary">
+<input type="file" class="custom-file-input" name="file">
+<label class="custom-file-label" for="uploader">Choose file...</label></div>
+<div class="input-group-append">
+<input name="_upl" type="submit" id="_upl" value="Upload File" class="input-group-text">
 </form>
 </div></div><br/>
 
